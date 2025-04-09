@@ -45,4 +45,5 @@ jobs:
             --image ${{ secrets.DOCKER_IMAGE_URL }}:latest \
             --platform managed \
             --region us-east1 \
-            --allow-unauthenticated
+            --allow-unauthenticated \
+            --memory 2 GiB
