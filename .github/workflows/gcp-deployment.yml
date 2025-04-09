@@ -46,4 +46,4 @@ jobs:
             --platform managed \
             --region us-east1 \
             --allow-unauthenticated \
-            --memory 2 GiB
+            --memory 2Gi \
