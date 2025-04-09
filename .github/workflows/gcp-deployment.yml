@@ -41,4 +41,5 @@ jobs:
             --image ${{ secrets.DOCKER_IMAGE_URL }}:latest \
             --platform managed \
             --region us-east1 \
+            --set-env-vars LANGFLOW_DATABASE_URL=${{ secrets.DB_CONNECTION_STRING }},LANGFLOW_CONFIG_DIR=app/langflow
             --allow-unauthenticated
