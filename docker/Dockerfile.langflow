@@ -2,10 +2,18 @@ FROM langflowai/langflow:latest
 
 USER root
 
+# Add build arguments
+ARG LANGFLOW_CONFIG_DIR
+ARG LANGFLOW_DATABASE_URL
+
+# Set environment variables from build arguments
+ENV LANGFLOW_CONFIG_DIR=${LANGFLOW_CONFIG_DIR}
+ENV LANGFLOW_DATABASE_URL=${LANGFLOW_DATABASE_URL}
+
 RUN apt-get update --allow-releaseinfo-change && \
     apt-get upgrade -y && \
     apt-get install -y build-essential curl npm git && \
     apt-get clean
 
 
-CMD ["python", "-m", "langflow", "run", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["python", "-m", "langflow", "run", "--host", "0.0.0.0", "--port", "8080"]
