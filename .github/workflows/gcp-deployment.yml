@@ -32,7 +32,6 @@ jobs:
       - name: Build and Push Docker Image
         run: |
            docker build \
-            --build-arg LANGFLOW_CONFIG_DIR=${{ secrets.LANGFLOW_CONFIG_DIR }} \
             --build-arg LANGFLOW_DATABASE_URL=${{ secrets.LANGFLOW_DATABASE_URL }} \
             -t ${{ secrets.DOCKER_IMAGE_URL }}:latest \
             -f ./docker/Dockerfile.langflow .
