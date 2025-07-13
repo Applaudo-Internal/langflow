@@ -3,185 +3,188 @@ title: Install Langflow
 slug: /get-started-installation
 ---
 
-Langflow can be installed in two ways:
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-* As a [Python package](#install-langflow-locally)
-* As a [standalone desktop application](#install-langflow-desktop)
+Langflow can be installed in multiple ways:
 
-## Install Langflow locally
+* **Langflow Desktop (Recommended)**: Download and install the [standalone desktop application](#install-and-run-langflow-desktop) for the easiest setup experience.
 
-Install Langflow locally with [uv (recommended)](https://docs.astral.sh/uv/getting-started/installation/), [pip](https://pypi.org/project/pip/), or [pipx](https://pipx.pypa.io/stable/installation/).
+* **Docker**: Pull and run the [Docker image](#install-and-run-langflow-docker) to start a Langflow container.
 
-### Prerequisites
+* **Python package**: Install the [Langflow OSS Python package](#install-and-run-the-langflow-oss-python-package).
 
-- [Python 3.10 to 3.13](https://www.python.org/downloads/release/python-3100/) installed
-- [uv](https://docs.astral.sh/uv/getting-started/installation/), [pip](https://pypi.org/project/pip/), or [pipx](https://pipx.pypa.io/stable/installation/) installed
-- Before installing Langflow, we recommend creating a virtual environment to isolate your Python dependencies with [uv](https://docs.astral.sh/uv/pip/environments), [venv](https://docs.python.org/3/library/venv.html), or [conda](https://anaconda.org/anaconda/conda)
+## Install and run Langflow Desktop
 
-### Install Langflow with pip or pipx
+**Langflow Desktop** is a desktop version of Langflow that includes all the features of open source Langflow, with an additional [version management](#manage-your-version-of-langflow-desktop) feature for managing your Langflow version.
 
-Install Langflow with uv:
+<Tabs groupId="os">
+  <TabItem value="macOS" label="macOS">
 
-```bash
-uv pip install langflow
-```
+  1. Navigate to [Langflow Desktop](https://www.langflow.org/desktop).
+  2. Click **Download Langflow**, enter your contact information, and then click **Download**.
+  3. Mount and install the Langflow application.
+  4. When the installation completes, open the Langflow application.
 
-Install Langflow with pip:
+  After confirming that Langflow is running, create your first flow with the [Quickstart](/get-started-quickstart).
 
-```bash
-python -m pip install langflow
-```
+  </TabItem>
+  <TabItem value="Windows" label="Windows">
 
-Install Langflow with pipx using the Python 3.10 executable:
+  1. Navigate to [Langflow Desktop](https://www.langflow.org/desktop).
+  2. Click **Download Langflow**, enter your contact information, and then click **Download**.
+  3. Open the **File Explorer**, and then navigate to **Downloads**.
+  4. Double-click the downloaded `.msi` file, and then use the install wizard to install Langflow Desktop.
 
-```bash
-pipx install langflow --python python3.10
-```
+      :::important
+      Windows installations of Langflow Desktop require a C++ compiler that may not be present on your system. If you receive a `C++ Build Tools Required!` error, follow the on-screen prompt to install Microsoft C++ Build Tools, or [install Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/).
+      :::
 
-## Run Langflow
+  5. When the installation completes, open the Langflow application.
 
-1. To run Langflow with uv, enter the following command.
+  After confirming that Langflow is running, create your first flow with the [Quickstart](/get-started-quickstart).
 
-```bash
-uv run langflow run
-```
+  </TabItem>
+</Tabs>
 
-2. To run Langflow with pip, enter the following command.
+  After confirming that Langflow is running, create your first flow with the [Quickstart](/get-started-quickstart).
 
-```bash
-python -m langflow run
-```
-
-3. Confirm that a local Langflow instance starts by visiting `http://127.0.0.1:7860` in a Chromium-based browser.
-
-Now that Langflow is running, follow the [Quickstart](/get-started-quickstart) to create your first flow.
-
-## Manage Langflow versions
-
-To upgrade Langflow to the latest version with uv, use the uv pip upgrade command.
-
-```bash
-uv pip install langflow -U
-```
-
-To upgrade Langflow to the latest version, use the pip upgrade command.
-
-```bash
-python -m pip install langflow -U
-```
-
-To install a specific version of the Langflow package, add the required version to the command.
-
-```bash
-python -m pip install langflow==1.1
-```
-
-To reinstall Langflow and all of its dependencies, add the `--force-reinstall` flag to the command.
-
-```bash
-python -m pip install langflow --force-reinstall
-```
-
-## Install Langflow Desktop
-
-:::important
-Langflow Desktop is in **Alpha**.
-Development is ongoing, and the features and functionality are subject to change.
-:::
-
-**Langflow Desktop** is a desktop version of Langflow that includes all the features of open source Langflow, with an additional **Version Management** feature for managing your Langflow version.
-
-:::important
-Langflow Desktop is available only for macOS.
-:::
-
-To install Langflow Desktop, follow these steps:
-
-1. Navigate to [Langflow Desktop](https://www.langflow.org/desktop).
-2. Enter your **Name**, **Email address**, and **Company**, and then click **Download**.
-3. Open the **Finder**, and then navigate to **Downloads**.
-4. Double-click the downloaded `*.dmg` file.
-5. To install Langflow Desktop, drag and drop the application icon to the **Applications** folder.
-6. When the installation completes, open the Langflow application.
-
-The application checks [uv](https://docs.astral.sh/uv/concepts/tools/), your local environment, and the Langflow version, and then starts.
-
-### Manage your Langflow version in Langflow Desktop
+### Manage your version of Langflow Desktop
 
 When a new version of Langflow is available, Langflow Desktop displays an upgrade message.
 
-To manage your Langflow version in Langflow Desktop, follow these steps:
+To manage your version of Langflow Desktop, follow these steps:
 
-1. To access Langflow Desktop's **Version Management** pane, click your **Profile Image**, and then select **Version Management**.
-Langflow Desktop's current version is displayed, with other version options listed after it.
-The **latest** version is always highlighted.
-2. To change your Langflow version, select another version.
-A confirmation pane containing the selected version's changelog appears.
-3. To change to the selected version, click **Confirm**.
-The application restarts with the new version installed.
+  1. In Langflow Desktop, click your profile image, and then select **Version Management**.
+  The **Version Management** pane lists your active Langflow version first, followed by other available versions.
+  The **latest** version is always highlighted.
+  2. To change your Langflow version, select another version.
+  A confirmation pane containing the selected version's changelog appears.
+  3. To apply the change, click **Confirm**.
+  Langflow desktop restarts to install and activate the new version.
 
-## Common installation issues
+### Manage dependencies in Langflow Desktop
 
-This is a list of possible issues that you may encounter when installing and running Langflow.
+To manage dependencies in Langflow Desktop, see [Install custom dependencies in Langflow Desktop](/install-custom-dependencies#langflow-desktop).
 
-### No `langflow.__main__` module
+## Install and run Langflow with Docker {#install-and-run-langflow-docker}
 
-When you try to run Langflow with the command `langflow run`, you encounter the following error:
+You can use the [Langflow Docker image](https://hub.docker.com/r/langflowai/langflow) to run Langflow in an isolated environment.
+Running applications in [Docker](https://docs.docker.com/) containers ensures consistent behavior across different systems and eliminates dependency conflicts.
 
-```bash
-> No module named 'langflow.__main__'
+1. Install and start [Docker](https://docs.docker.com/).
+2. Pull the latest [Langflow Docker image](https://hub.docker.com/r/langflowai/langflow) and start it:
+
+  ```bash
+  docker run -p 7860:7860 langflowai/langflow:latest
+  ```
+
+3. To access Langflow, navigate to `http://localhost:7860/`.
+
+For more information, see [Deploy Langflow on Docker](/deployment-docker).
+
+## Install and run the Langflow OSS Python package
+
+To install and run Langflow OSS, you need the following:
+
+- [Python 3.10 to 3.13](https://www.python.org/downloads/release/python-3100/) for macOS/Linux, and Python 3.10 to 3.12 for Windows
+- [uv](https://docs.astral.sh/uv/getting-started/installation/)
+- At minimum, a dual-core CPU and 2 GB RAM, but a multi-core CPU and at least 4 GB RAM are recommended
+
+1. Create a virtual environment with [uv](https://docs.astral.sh/uv/pip/environments).
+
+<details>
+<summary>Need help with virtual environments?</summary>
+
+Virtual environments ensure Langflow is installed in an isolated, fresh environment.
+To create a new virtual environment, do the following.
+
+<Tabs groupId="os">
+  <TabItem value="macOS/Linux" label="macOS/Linux" default>
+    1. Navigate to where you want your virtual environment to be created, and create it with `uv`.
+Replace `VENV_NAME` with your preferred name for your virtual environment.
 ```
-
-1. Run `python -m langflow run` instead of `langflow run`.
-2. If that doesn't work, reinstall the latest Langflow version with `python -m pip install langflow -U`.
-3. If that doesn't work, reinstall Langflow and its dependencies with `python -m pip install langflow --pre -U --force-reinstall`.
-
-### Langflow runTraceback
-
-When you try to run Langflow using the command `langflow run`, you encounter the following error:
-
-```bash
-> langflow runTraceback (most recent call last): File ".../langflow", line 5, in <module>  from langflow.__main__ import mainModuleNotFoundError: No module named 'langflow.__main__'
+uv venv VENV_NAME
 ```
-
-There are two possible reasons for this error:
-
-1. You've installed Langflow using `pip install langflow` but you already had a previous version of Langflow installed in your system. In this case, you might be running the wrong executable. To solve this issue, run the correct executable by running `python -m langflow run` instead of `langflow run`. If that doesn't work, try uninstalling and reinstalling Langflow with `python -m pip install langflow --pre -U`.
-2. Some version conflicts might have occurred during the installation process. Run `python -m pip install langflow --pre -U --force-reinstall` to reinstall Langflow and its dependencies.
-
-### Something went wrong running migrations
-
-```bash
-> Something went wrong running migrations. Please, run 'langflow migration --fix'
+2. Start the virtual environment.
 ```
-
-Clear the cache by deleting the contents of the cache folder.
-
-This folder can be found at:
-
-- **Linux or WSL2 on Windows**: `home/<username>/.cache/langflow/`
-- **MacOS**: `/Users/<username>/Library/Caches/langflow/`
-
-This error can occur during Langflow upgrades when the new version can't override `langflow-pre.db` in `.cache/langflow/`. Clearing the cache removes this file but also erases your settings.
-
-If you wish to retain your files, back them up before clearing the folder.
-
-### Langflow installation freezes at pip dependency resolution
-
-Installing Langflow with `pip install langflow` slowly fails with this error message:
-
-```text
-pip is looking at multiple versions of <<library>> to determine which version is compatible with other requirements. This could take a while.
+source VENV_NAME/bin/activate
 ```
-
-To work around this issue, install Langflow with [`uv`](https://docs.astral.sh/uv/getting-started/installation/) instead of `pip`.
-
-```text
-uv pip install langflow
+Your shell's prompt changes to display that you're currently working in a virtual environment.
 ```
-
-To run Langflow with uv:
-
-```text
-uv run langflow run
+(VENV_NAME) ➜  langflow git:(main) ✗
 ```
+3. To deactivate the virtual environment and return to your regular shell, type `deactivate`.
+   When activated, the virtual environment temporarily modifies your PATH variable to prioritize packages installed within the virtual environment, so always deactivate it when you're done to avoid conflicts with other projects.
+To delete the virtual environment, type `rm -rf VENV_NAME`.
+  </TabItem>
+  <TabItem value="Windows" label="Windows">
+1. Navigate to where you want your virtual environment to be created, and create it with `uv`.
+Replace `VENV_NAME` with your preferred name for your virtual environment.
+```
+uv venv VENV_NAME
+```
+2. Start the virtual environment.
+```shell
+VENV_NAME\Scripts\activate
+```
+Your shell's prompt changes to display that you're currently working in a virtual environment.
+```
+(VENV_NAME) PS C:/users/username/langflow-dir>
+```
+3. To deactivate the virtual environment and return to your regular shell, type `deactivate`.
+   When activated, the virtual environment temporarily modifies your PATH variable to prioritize packages installed within the virtual environment, so always deactivate it when you're done to avoid conflicts with other projects.
+To delete the virtual environment, type `Remove-Item VENV_NAME`.
+  </TabItem>
+  </Tabs>
+
+</details>
+
+2. To install Langflow, run the following command.
+
+    ```bash
+    uv pip install langflow
+    ```
+
+3. After installation, start Langflow:
+
+    ```bash
+    uv run langflow run
+    ```
+
+4. To confirm that a local Langflow instance is running, navigate to the default Langflow URL `http://127.0.0.1:7860`.
+It can take a few minutes for Langflow to start.
+
+After confirming that Langflow is running, create your first flow with the [Quickstart](/get-started-quickstart).
+
+### Install Langflow from source
+
+To install Langflow from source, see [Install Langflow from source](/contributing-how-to-contribute#install-langflow-from-source).
+
+### Manage Langflow OSS versions
+
+:::important
+The Langflow team recommends installing new Langflow versions in a new virtual environment before upgrading your primary installation.
+
+This allows you to [import flows](/concepts-flows#import-flow) from your existing installation and test them in the new version without disrupting your existing installation.
+In the event of breaking changes or bugs, your existing installation is preserved in a stable state.
+:::
+
+To manage your Langflow OSS version, use the following commands:
+
+* Upgrade Langflow to the latest version: `uv pip install langflow -U`
+* Install a specific version of the Langflow package by adding the required version to the command, such as: `uv pip install langflow==1.3.2`
+* Reinstall Langflow and all of its dependencies: `uv pip install langflow --force-reinstall`
+
+### Manage Langflow OSS dependencies
+
+Langflow OSS provides optional dependency groups and support for custom dependencies to extend Langflow functionality.
+For more information, see [Install custom dependencies](/install-custom-dependencies).
+
+## Troubleshoot Langflow installation and startup issues
+
+If you encounter an issue when installing or running Langflow, see [Troubleshoot Langflow](/troubleshoot).
+
+## Next steps
+
+After installing Langflow, build and run a flow with the [quickstart](/get-started-quickstart).
