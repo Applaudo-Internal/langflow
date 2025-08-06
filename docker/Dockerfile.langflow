@@ -8,6 +8,7 @@ RUN apt-get update --allow-releaseinfo-change && \
     # Install Node.js and npm using NodeSource
     curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
     apt-get install -y nodejs && \
+    pip install google-auth google-auth-httplib2 && \
     # Verify installations
     node -v && \
     npm -v && \
